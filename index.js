@@ -33,9 +33,9 @@ const findStudent=(name)=>{
 //find student by present status
 const findPresent=(present)=>{
     Student.find({present:true})
-    .then(student=>{
-        console.info(student);
-        console.info(`${student.length} matches`);
+    .then(students=>{
+        console.info(students);
+        console.info(`${students.length} students present`);
     });
 };
 
@@ -62,7 +62,7 @@ const allStudents=()=>{
     Student.find()
     .then(students=>{
         console.info(students);
-        console.info(`${student.length} students`);
+        console.info(`${students.length} students`);
     });
 }
 

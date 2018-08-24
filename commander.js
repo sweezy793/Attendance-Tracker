@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const program=require('commander');
 const {prompt}=require('inquirer');
 const {
@@ -60,7 +61,7 @@ program
 });
 
 program
-.command('findp <present>')
+.command('findp')
 .alias('fp')
 .description('Find present students')
 .action(present=>{
@@ -82,6 +83,15 @@ program
 .action(_id=>{
     removeStudent(_id)
 });
+
+program
+.command('list')
+.alias('ls')
+.description('List all students')
+.action(()=>{
+    allStudents();
+});
+
 
 
 program.parse(process.argv);
