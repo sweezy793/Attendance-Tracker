@@ -1,7 +1,8 @@
 const program=require('commander');
 const {
     addStudent,
-    findStudent
+    findStudent,
+    findPresent
 }=require('./index');
 
 program
@@ -22,6 +23,14 @@ program
 .description('Find a student')
 .action(name=>{
     findStudent(name)
+});
+
+program
+.command('find <present>')
+.alias('fp')
+.description('Find present students')
+.action(present=>{
+    findPresent(present)
 });
 
 

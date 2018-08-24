@@ -30,11 +30,20 @@ const findStudent=(name)=>{
     });
 }
 
+const findPresent=(present)=>{
+    Student.find({present:true})
+    .then(student=>{
+        console.info(student);
+        console.info(`${student.length} matches`);
+    })
+}
+
 
 
 module.exports={
     addStudent,
-    findStudent
+    findStudent,
+    findPresent
 }
 
 
