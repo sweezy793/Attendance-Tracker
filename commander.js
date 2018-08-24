@@ -3,7 +3,10 @@ const {prompt}=require('inquirer');
 const {
     addStudent,
     findStudent,
-    findPresent
+    findPresent,
+    updateStudent,
+    removeStudent,
+    allStudents
 }=require('./index');
 
 
@@ -40,14 +43,6 @@ program
 .version('1.0.0')
 .description('Student Management System')
 
-// program
-// .command('add <firstname> <lastname> <rollno> <subject> <present>')
-// .alias('a')
-// .description('Add a student')
-// .action((firstname,lastname,rollno,subject,present)=>{
-//     addStudent({firstname,lastname,rollno,subject,present});    
-// });
-
 program
 .command('add')
 .alias('a')
@@ -71,6 +66,14 @@ program
 .action(present=>{
     findPresent(present)
 });
+
+program
+.command('update')
+.alias('u')
+.description('Update student')
+.action(()=>{
+    prompt(questions).then(answers=>updateStudent(answers));
+}); 
 
 
 program.parse(process.argv);
