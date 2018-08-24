@@ -16,7 +16,7 @@ const addStudent=(student)=>{
         console.info('Student data added');
         //db.close();
     });
-}
+};
 
 //find student by name
 const findStudent=(name)=>{
@@ -28,22 +28,54 @@ const findStudent=(name)=>{
         console.info(`${student.length} matches`);
         //db.close();
     });
-}
+};
 
+//find student by present status
 const findPresent=(present)=>{
     Student.find({present:true})
     .then(student=>{
         console.info(student);
         console.info(`${student.length} matches`);
-    })
+    });
+};
+
+
+//update student details
+const updateStudent=(_id,student)=>{
+    Student.update({_id},student)
+    .then(student=>{
+        console.info('Student Updated');
+        
+    });
+};
+
+//remove student
+const removeStudent=(_id)=>{
+    Student.remove({_id})
+    .then(student=>{
+        console.info('Student removed');
+    });
 }
+
+//list all students
+const allStudents=()=>{
+    Student.find()
+    .then(students=>{
+        console.info(students);
+        console.info(`${student.length} students`);
+    });
+}
+
 
 
 
 module.exports={
     addStudent,
     findStudent,
-    findPresent
+    findPresent,
+    updateStudent,
+    removeStudent,
+    allStudents
 }
 
 

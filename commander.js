@@ -65,7 +65,7 @@ program
 });
 
 program
-.command('find <present>')
+.command('findp <present>')
 .alias('fp')
 .description('Find present students')
 .action(present=>{
