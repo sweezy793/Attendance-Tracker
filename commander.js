@@ -68,11 +68,11 @@ program
 });
 
 program
-.command('update')
+.command('update <_id>')
 .alias('u')
 .description('Update student')
-.action(()=>{
-    prompt(questions).then(answers=>updateStudent(answers));
+.action((_id)=>{
+    prompt(questions).then(answers=>updateStudent(_id,answers));
 }); 
 
 
