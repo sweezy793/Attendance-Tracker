@@ -4,13 +4,17 @@ const Student=require('./models/student');
 mongoose.Promise=global.Promise;
 
 //connects to db
-const db=mongoose.connect('mongodb://localhost:27017/attendancecli',{useMongoClient:true});
+const db=mongoose.connect('mongodb://localhost:27017/attendancecli',{ useNewUrlParser: true } );
+
+
+
+
 
 //add student
 const addStudent=(student)=>{
     Student.create(student).then(student=>{
         console.info('Student data added');
-        db.close();
+        //db.close();
     });
 }
 
@@ -22,12 +26,16 @@ const findStudent=(name)=>{
     .then(student=>{
         console.info(student);
         console.info(`${student.length} matches`);
-        db.close();
+        //db.close();
     });
 }
+
+
 
 module.exports={
     addStudent,
     findStudent
 }
+
+
  
