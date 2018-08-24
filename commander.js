@@ -54,7 +54,7 @@ program
 program
 .command('find <name>')
 .alias('f')
-.description('Find a student')
+.description('Find student')
 .action(name=>{
     findStudent(name)
 });
@@ -74,6 +74,14 @@ program
 .action((_id)=>{
     prompt(questions).then(answers=>updateStudent(_id,answers));
 }); 
+
+program
+.command('remove <_id>')
+.alias('rm')
+.description('Remove student')
+.action(_id=>{
+    removeStudent(_id)
+});
 
 
 program.parse(process.argv);
