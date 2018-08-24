@@ -8,11 +8,15 @@ A student management CLI with all necessary CRUD functions.
 - `npm link` to link the CLI with system 
 - `attendance-tracker --help` to find out all the available commands
 
+## Bugs
+
+After entering a command, you have to always `^C` to exit CLI.
+
 ## Built With
 
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js) A collection of common interactive command line user interfaces.
 * [commander.js](https://github.com/tj/commander.js) To use CLIs with Node.js
-* [mongoose] MongoDB ODM
+* [mongoose](https://github.com/Automattic/mongoose) MongoDB ODM.
 
 ## Screenshots
 
